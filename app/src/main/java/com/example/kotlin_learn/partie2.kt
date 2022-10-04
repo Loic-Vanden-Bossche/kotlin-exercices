@@ -106,7 +106,7 @@ abstract class Matrix<T>(val ny: Int, val nx: Int) {
 
 open class SquareMatrix<T>(n: Int) : Matrix<T>(n, n)
 
-class IntMatrix(ny: Int, nx: Int) : Matrix<Int>(ny, nx) {
+open class IntMatrix(ny: Int, nx: Int) : Matrix<Int>(ny, nx) {
     operator fun times(other: IntMatrix): IntMatrix {
         require(this.nx == other.ny) { "Matrices dimensions must agree" }
         val result = IntMatrix(this.ny, other.nx)
